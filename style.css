@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+nav h3 {
+  color: white;
+  margin: 0;
+  text-align: center;
+  height: 60px;
+  vertical-align: middle;
+  line-height: 60px;
+}
+.hero-section {
+  margin: 0;
+  background-color: rgb(35, 35, 35);
+}
+.background {
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+}
+.background::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 80;
+  left: 0;
+  height: 700px;
+  width: 100%;
+  background-color: rgba(46, 46, 46, 0.8);
+}
