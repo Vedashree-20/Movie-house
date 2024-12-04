@@ -17,8 +17,14 @@ nav h3 {
   background-color: rgb(35, 35, 35);
 }
 .background {
+  position: relative;
   height: 700px;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  align-items: center;
   width: 100%;
+
   background-size: cover;
 }
 .background::before {
@@ -29,5 +35,66 @@ nav h3 {
   left: 0;
   height: 700px;
   width: 100%;
+  z-index: 1;
   background-color: rgba(46, 46, 46, 0.8);
+}
+.movie-info {
+  width: 40%;
+  z-index: 2;
+  color: rgb(255, 255, 255);
+}
+.poster {
+  z-index: 2;
+  height: 500px;
+  width: 400px;
+  background-color: blue;
+  margin-left: 80px;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+.movie-name {
+  font-size: 50px;
+}
+
+.bullet:not(:last-child)::after {
+  content: " •"; /* Adds a bullet character after the span */
+  padding: 5px;
+  color: rgb(255, 255, 255); /* You can customize the color */
+  font-size: 14px;
+}
+
+.rating {
+  display: flex; /* Enable flexbox */
+  align-items: center;
+}
+
+.score,
+.user-score {
+  display: inline-block;
+  margin-right: 10px;
+}
+.score {
+  font-size: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(66, 87, 87, 0.4);
+
+  border-radius: 50%;
+  display: flex; /* To center the text vertically and horizontally */
+  align-items: center; /* Centers the text vertically */
+  justify-content: center; /* Centers the text horizontally */
+  text-align: center;
+}
+.yellow {
+  color: rgb(233, 233, 103);
+}
+.green {
+  color: #33f553;
+}
+.release-genre {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
