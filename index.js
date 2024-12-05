@@ -92,6 +92,25 @@ function displayBackground(response) {
   showMovieDetails(response.data.results);
 }
 
+function displayPopularMovie(response) {
+  let popularMovieList = "";
+
+  for (let i = 0; i < 10; i++) {
+    let posterPath = response.data.results[i].poster_path;
+    let posterUrl = `https://image.tmdb.org/t/p/original${posterPath}`;
+    let movieName = response.data.results[i].title;
+    let releaseDate = response.data.results[i].release_date;
+    popularMovieList += `<div class=movie-card>
+        <div class="image"><img src="${posterUrl}" alt="${movieName}" width="250" height="350" object-fit= "cover";></div>
+        <div class="movie-name"> ${movieName}</div>
+        <div class="release-date">${releaseDate}</div>
+        </div>`;
+  }
+  let popularMovieDiv = document.querySelector(".movie-list");
+  popularMovieDiv.innerHTML = popularMovieList;
+  console.log(popularMovieList);
+}
+
 //API call to get the display picture from trending movies
 const options = {
   method: "GET",
@@ -110,11 +129,11 @@ axios
   //.then(displayBackground)
   .catch((err) => console.error(err));
 
-//API call to get genre list
-/*const genreList = {
+//API call to get the popular movie list
+const options2 = {
   method: "GET",
-  url: "https://api.themoviedb.org/3/genre/movie/list",
-  params: { language: "en" },
+  url: "https://api.themoviedb.org/3/movie/popular",
+  params: { language: "en-US", page: "1" },
   headers: {
     accept: "application/json",
     Authorization:
@@ -123,6 +142,6 @@ axios
 };
 
 axios
-  .request(genreList)
-  .then(findGenre)
-  .catch((err) => console.error(err)); */
+  .request(options2)
+  .then(displayPopularMovie)
+  .catch((err) => console.error(err));

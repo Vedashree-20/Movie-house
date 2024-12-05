@@ -98,3 +98,26 @@ nav h3 {
   gap: 10px;
   align-items: center;
 }
+
+.popular-container h2 {
+  margin: 0px 80px;
+  padding: 40px 40px 40px 0px;
+  color: rgb(228, 227, 227);
+}
+.popular-container {
+  width: 100%;
+  margin: 0px;
+  background-color: rgb(26, 26, 26);
+}
+.movie-list {
+  display: flex;
+  gap: 30px;
+  margin-left: 80px;
+  overflow-x: auto;
+}
+.release-date,
+.movie-name {
+  font-size: 18px;
+  color: rgb(228, 228, 228);
+  padding-top: 10px;
+}
